@@ -1,0 +1,65 @@
+<!-- pending_problems.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pending Problems</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+        li {
+            background-color: #fff;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        li:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        .no-problems {
+            text-align: center;
+            color: #666;
+        }
+        .home-button {
+            display: block;
+            width: 120px;
+            margin: 20px auto 0;
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            text-align: center;
+        }
+        .home-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>Pending Problems for Resident {{ resident_uid }}</h1>
+    <ul>
+        {% for problem in pending_problems %}
+            <li>{{ problem.problem_description }}</li>
+        {% empty %}
+            <li class="no-problems">No pending problems for this resident.</li>
+        {% endfor %}
+    </ul>
+
+    <a href="/" class="home-button">Home</a>
+</body>
+</html>

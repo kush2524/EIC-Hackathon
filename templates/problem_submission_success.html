@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Submission Success</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        p {
+            text-align: center;
+            color: #666;
+            margin-bottom: 20px;
+        }
+        .info {
+            text-align: center;
+            color: #333;
+            margin-top: 40px;
+        }
+        .home-button {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            display: block;
+            width: 120px;
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            text-align: center;
+        }
+        .home-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <a href="/" class="home-button">Home</a>
+    <h1>Problem Submitted Successfully!</h1>
+    <p>Thank you for submitting your problem. We will review it shortly.</p>
+    
+    <p class="info">Total Pending Problems: {{ pending_problems_count }}</p>
+</body>
+</html>

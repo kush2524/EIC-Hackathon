@@ -1,0 +1,21 @@
+<!-- problem_list.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Problem List</title>
+</head>
+<body>
+    <h1>Problem List</h1>
+    <ul>
+        {% for problem in problems %}
+        <li>
+            <a href="{% url 'problem_detail' society_id=society.id problem_id=problem.id %}">
+                {{ problem.problem_description }}
+            </a>
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Society</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+        }
+        input[type="text"] {
+            width: calc(100% - 22px);
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        button[type="submit"] {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        button[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+        h2 {
+            color: #333;
+            text-align: center; /* Centering the text */
+        }
+        p {
+            margin-bottom: 10px;
+            text-align: center; /* Centering the text */
+        }
+        /* Styling for generated UID section */
+        .generated-uids {
+            background-color: #f9f9f9;
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 20px;
+            text-align: center; /* Centering the div */
+        }
+        .home-button {
+            display: block;
+            width: 120px;
+            margin: 20px auto 0;
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            text-align: center;
+        }
+        .home-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>Register Your Society</h1>
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Register</button>
+    </form>
+
+    <!-- Display generated UUIDs -->
+    {% if secretary_uid and resident_uid %}
+        <div class="generated-uids">
+            <h2>Generated UIDs:</h2>
+            <p>Secretary UID: {{ secretary_uid }}</p>
+            <p>Resident UID: {{ resident_uid }}</p>
+        </div>
+    {% endif %}
+
+    <!-- Home button -->
+    <a href="/" class="home-button">Home</a>
+</body>
+</html>
